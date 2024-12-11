@@ -1,0 +1,10 @@
+<application>
+  <component name="LafManager">
+    <laf themeId="com.github.catppuccin.mocha.jetbrains" />
+    <lafs-to-previous-schemes>
+      <laf-to-scheme laf="com.github.catppuccin.frappe.jetbrains" scheme="_@user_Catppuccin Mocha (no italics)" />
+      <laf-to-scheme laf="com.github.catppuccin.mocha.jetbrains" scheme="_@user_Catppuccin Mocha (no italics)" />
+      <laf-to-scheme laf="intellij_github_dark_theme" scheme="_@user_GitHub Dark Dimmed" />
+    </lafs-to-previous-schemes>
+  </component>
+</application>

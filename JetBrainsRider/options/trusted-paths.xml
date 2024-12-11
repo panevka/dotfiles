@@ -1,0 +1,15 @@
+<application>
+  <component name="Trusted.Paths">
+    <option name="TRUSTED_PROJECT_PATHS">
+      <map>
+        <entry key="$USER_HOME$/programowanie/Polimorfizm" value="true" />
+        <entry key="$USER_HOME$/programowanie/PomodoroApp" value="true" />
+        <entry key="$USER_HOME$/programowanie/PomodoroApp/.idea/.idea.PomodoroApp" value="true" />
+        <entry key="$USER_HOME$/programowanie/PomodoroProductivityApp" value="true" />
+        <entry key="$USER_HOME$/programowanie/PomodoroProductivityApp/.idea/.idea.PomodoroProductivityApp" value="true" />
+        <entry key="$USER_HOME$/programowanie/SystemZgloszen" value="true" />
+        <entry key="$USER_HOME$/programowanie/SystemZgloszen/.idea/.idea.SystemZgloszen" value="true" />
+      </map>
+    </option>
+  </component>
+</application>
