@@ -19,19 +19,9 @@ require("lazy").setup({
 	--
 	-- Use `opts = {}` to force a plugin to be loaded.
 	--
-	--
-	{
-		"rmagatti/auto-session",
-		lazy = false,
+	-- Storing directory/custom sessions for next nvim run
+	require("plugins/auto-session"),
 
-		---enables autocomplete for opts
-		---@module "auto-session"
-		---@type AutoSession.Config
-		opts = {
-			suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-			-- log_level = 'debug',
-		},
-	},
 	-- Neovim plugin for http requests, insomnia like.
 	require("plugins/rest"),
 
@@ -42,6 +32,7 @@ require("lazy").setup({
 	require("plugins/lazygit"),
 
 	require("plugins/gitsigns"),
+
 	-- NOTE: Plugins can also be configured to run Lua code when they are loaded.
 	--
 	-- This is often very useful to both group configuration, as well as handle
