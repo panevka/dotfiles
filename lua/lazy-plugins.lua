@@ -41,11 +41,13 @@ require("lazy").setup({
 
 	-- [LSP Plugins]
 
+	-- Lua LSP configuration for Neovim
 	require("plugins/lsp/lazydev"),
 
 	-- Data types, classes, methods for Lua Luvit framework
 	require("plugins/lsp/luvit-meta"),
 
+	-- Main LSP Configuration
 	require("plugins/nvim-lspconfig"),
 
 	{
