@@ -33,16 +33,7 @@ require("lazy").setup({
 		},
 	},
 	-- Neovim plugin for http requests, insomnia like.
-	{
-		"rest-nvim/rest.nvim",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-			opts = function(_, opts)
-				opts.ensure_installed = opts.ensure_installed or {}
-				table.insert(opts.ensure_installed, "http")
-			end,
-		},
-	},
+	require("plugins/rest"),
 
 	-- VSCode-like side GUI file tree in neovim
 	require("plugins/nvim-tree"),
