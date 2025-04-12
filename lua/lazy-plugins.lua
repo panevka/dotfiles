@@ -43,7 +43,8 @@ require("lazy").setup({
 
 	require("plugins/lsp/lazydev"),
 
-	{ "Bilal2453/luvit-meta", lazy = true },
+	-- Data types, classes, methods for Lua Luvit framework
+	require("plugins/lsp/luvit-meta"),
 
 	require("plugins/nvim-lspconfig"),
 
