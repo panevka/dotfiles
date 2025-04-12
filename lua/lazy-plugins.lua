@@ -50,50 +50,8 @@ require("lazy").setup({
 	-- Main LSP Configuration
 	require("plugins/nvim-lspconfig"),
 
-	{
-		"nvim-java/nvim-java",
-		dependencies = {
-			{
-				"neovim/nvim-lspconfig",
-				opts = {
-					servers = {
-						-- Your JDTLS configuration goes here
-						jdtls = {
-							-- settings = {
-							--   java = {
-							--     configuration = {
-							--       runtimes = {
-							--         {
-							--           name = "JavaSE-23",
-							--           path = "/usr/local/sdkman/candidates/java/23-tem",
-							--         },
-							--       },
-							--     },
-							--   },
-							-- },
-						},
-					},
-					setup = {
-						jdtls = function()
-							-- Your nvim-java configuration goes here
-							require("java").setup({
-								root_markers = {
-									"settings.gradle",
-									"settings.gradle.kts",
-									"pom.xml",
-									"build.gradle",
-									"mvnw",
-									"gradlew",
-									"build.gradle",
-									"build.gradle.kts",
-								},
-							})
-						end,
-					},
-				},
-			},
-		},
-	},
+	-- Java LSP Config
+	require("plugins/lsp/nvim-java"),
 
 	{ -- Autoformat
 		"stevearc/conform.nvim",
