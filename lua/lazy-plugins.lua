@@ -68,6 +68,7 @@ require("lazy").setup({
 	-- Collection of various small independent plugins/modules
 	require("plugins/mini"),
 
+	-- Highlight, edit, and navigate code
 	require("plugins/treesitter"),
 
 	-- Extension installer, NodeJS host for Neovim
