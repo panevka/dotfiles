@@ -70,22 +70,12 @@ require("lazy").setup({
 
 	require("plugins/treesitter"),
 
+	-- Extension installer, NodeJS host for Neovim
+	require("plugins/coc"),
+
 	-- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
 	-- init.lua. If you want these files, they are in the repository, so you can just download them and
 	-- place them in the correct locations.
-
-	-- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
-
-	{
-		"neoclide/coc.nvim", -- This is the coc.nvim plugin
-		branch = "release", -- You can choose other branches, but `release` is most stable
-		config = function()
-			-- You can add additional configuration for coc.nvim here if needed
-			-- For example, to set up the coc extensions
-			-- vim.cmd("CocInstall coc-tsserver coc-python coc-eslint")  -- Install extensions (example)
-		end,
-	},
-
 	--
 	--  Here are some example plugins that I've included in the Kickstart repository.
 	--  Uncomment any of the lines below to enable them (you will need to restart nvim).
@@ -96,6 +86,8 @@ require("lazy").setup({
 	-- require 'kickstart.plugins.autopairs',
 	-- require 'kickstart.plugins.neo-tree',
 	-- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+
+	-- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
 	--    This is the easiest way to modularize your config.
