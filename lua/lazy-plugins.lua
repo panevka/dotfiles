@@ -43,20 +43,10 @@ require("lazy").setup({
 			end,
 		},
 	},
-	--
+
 	-- VSCode-like side GUI file tree in neovim
-	--
-	{
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
-		lazy = false,
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-		config = function()
-			require("nvim-tree").setup({})
-		end,
-	},
+	require("plugins/nvim-tree"),
+
 	-- Git UI inside nvim
 	require("plugins/lazygit"),
 
