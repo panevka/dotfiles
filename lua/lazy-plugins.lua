@@ -18,6 +18,7 @@ require("lazy").setup({
 	--
 	-- Use `opts = {}` to force a plugin to be loaded.
 
+	-- [[Plugins]]
 	-- Detect tabstop and shiftwidth automatically
 	require("plugins/vim-sleuth"),
 
@@ -41,7 +42,22 @@ require("lazy").setup({
 	-- Fuzzy Finder (files, lsp, etc)
 	require("plugins/telescope"),
 
-	-- [LSP Plugins]
+	-- Colorscheme plugins & settings
+	require("plugins/colorscheme"),
+
+	-- Highlight todo, notes, etc in comments
+	require("plugins/todo-comments"),
+
+	-- Collection of various small independent plugins/modules
+	require("plugins/mini"),
+
+	-- Highlight, edit, and navigate code
+	require("plugins/treesitter"),
+
+	-- Extension installer, NodeJS host for Neovim
+	require("plugins/coc"),
+
+	-- [[LSP Plugins]]
 
 	-- Lua LSP configuration for Neovim
 	require("plugins/lsp/lazydev"),
@@ -60,21 +76,6 @@ require("lazy").setup({
 
 	-- Autocompletion
 	require("plugins/lsp/nvim-cmp"),
-
-	-- Colorscheme plugins & settings
-	require("plugins/colorscheme"),
-
-	-- Highlight todo, notes, etc in comments
-	require("plugins/todo-comments"),
-
-	-- Collection of various small independent plugins/modules
-	require("plugins/mini"),
-
-	-- Highlight, edit, and navigate code
-	require("plugins/treesitter"),
-
-	-- Extension installer, NodeJS host for Neovim
-	require("plugins/coc"),
 
 	-- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
 	-- init.lua. If you want these files, they are in the repository, so you can just download them and
