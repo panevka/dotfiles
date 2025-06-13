@@ -24,6 +24,11 @@ export PATH=$PATH:$PYTHON_HOME/Scripts
 export EDITOR=nvim 
 export VISUAL=nvim
 export BROWSER=zen-browser
+
+if [ -r "$HOME/.bashrc_private" ]; then
+    source "$HOME/.bashrc_private"
+fi
+
 eval "$(starship init bash)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
