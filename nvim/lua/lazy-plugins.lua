@@ -57,6 +57,8 @@ require("lazy").setup({
 	-- Extension installer, NodeJS host for Neovim
 	require("plugins/coc"),
 
+	require("plugins/luarocks"),
+
 	-- [[LSP Plugins]]
 
 	-- Lua LSP configuration for Neovim
