@@ -59,6 +59,8 @@ require("lazy").setup({
 
 	require("plugins/luarocks"),
 
+	require("plugins/nvim-soil"),
+
 	-- [[LSP Plugins]]
 
 	-- Lua LSP configuration for Neovim
