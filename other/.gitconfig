@@ -1,0 +1,7 @@
+[user]
+	email = 97028404+panevka@users.noreply.github.com
+	name = panevka
+[http]
+	version = HTTP/1.1
+[push]
+	autoSetupRemote = true
