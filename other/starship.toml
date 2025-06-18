@@ -1,0 +1,25 @@
+add_newline = true
+
+# [username]
+# style_user = 'white bold'
+# style_root = 'black bold'
+# format = 'user: [$hostname @ $user]($style) '
+# disabled = false
+# show_always = true
+# aliases = { "corpuser034g" = "matchai" }
+
+[username]
+# ssh_only = false
+style_user= "bold fg:#ff79c6 bg:#44475a"
+format = "[$user]@[$hostname](bg:#44475a fg:#ff79c6)@"
+disabled = false
+
+# [hostname]
+# style_hostname = "bold fg:#8be9fd bg:#44475a"
+# format = "[ $hostname ](bg:#44475a fg:#8be9fd) "
+
+# [hostname]
+# ssh_only = false
+# format = '[$ssh_symbol](bold blue) on [$hostname](bold red) '
+# trim_at = '.companyname.com'
+# disabled = false
