@@ -1,0 +1,1 @@
+*/30 * * * * rclone sync ~/panevka GoogleDrive:/panevka
