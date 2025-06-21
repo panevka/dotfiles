@@ -1,0 +1,3 @@
+[env]
+# Use the 256 color terminal by default (for true, richer color)
+TERM = "xterm-256color"
