@@ -1,3 +1,9 @@
+[colors.primary]
+background = "#1E1E2E"
+bright_foreground = "#CDD6F4"
+dim_foreground = "#CDD6F4"
+foreground = "#CDD6F4"
+
 [env]
 # Use the 256 color terminal by default (for true, richer color)
 TERM = "xterm-256color"
