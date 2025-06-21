@@ -7,7 +7,7 @@ return {
 		{ "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-
+		"nvim-java/nvim-java",
 		-- Useful status updates for LSP.
 		-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
 		{ "j-hui/fidget.nvim", opts = {} },
@@ -209,7 +209,7 @@ return {
 		require("mason").setup()
 
 		-- Java
-		require("lspconfig").jdtls.setup({})
+		-- require("lspconfig").jdtls.setup({}) -- cannot be enabled due to conflict with nvim-java
 		-- You can add other tools here that you want Mason to install
 		-- for you, so that they are available from within Neovim.
 		local ensure_installed = vim.tbl_keys(servers or {})
@@ -232,6 +232,15 @@ return {
 					-- certain features of an LSP (for example, turning off formatting for ts_ls)
 					server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
 					require("lspconfig")[server_name].setup(server)
+				end,
+				jdtls = function()
+					require("java").setup({
+						-- Your custom jdtls settings goes here
+					})
+
+					require("lspconfig").jdtls.setup({
+						-- Your custom nvim-java configuration goes here
+					})
 				end,
 			},
 		})
