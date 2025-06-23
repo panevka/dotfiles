@@ -25,7 +25,7 @@ return {
 		}, {
 			group = lint_augroup,
 			callback = function()
-				lint.try_lint()
+				lint.try_lint(nil, { ignore_errors = true })
 			end,
 		})
 	end,
