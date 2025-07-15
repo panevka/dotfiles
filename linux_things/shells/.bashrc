@@ -23,7 +23,7 @@ export PYTHON_HOME="/usr/bin/python3"
 export PATH=$PATH:$PYTHON_HOME/Scripts
 export EDITOR=nvim 
 export VISUAL=nvim
-export BROWSER=zen-browser
+export BROWSER=firefox
 
 if [ -r "$HOME/.bashrc_private" ]; then
     source "$HOME/.bashrc_private"
