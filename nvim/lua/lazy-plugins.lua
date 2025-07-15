@@ -31,6 +31,9 @@ require("lazy").setup({
 	-- VSCode-like side GUI file tree in neovim
 	require("plugins/nvim-tree"),
 
+	-- Auto update for imports after rename/move operations with nvim-tree
+	require("plugins/lsp/nvim-lsp-file-operations"),
+
 	-- Git UI inside nvim
 	require("plugins/lazygit"),
 
