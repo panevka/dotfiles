@@ -174,7 +174,31 @@ return {
 			--
 			-- But for many setups, the LSP (`ts_ls`) will work just fine
 			-- ts_ls = {},
-			--
+
+			clangd = {
+				cmd = {
+					"clangd",
+					"--compile-commands-dir=.",
+					"--clang-tidy",
+					"--fallback-style=llvm",
+					"--query-driver=*",
+					"--extra-arg=-Wall",
+					"--extra-arg=-Wextra",
+					"--extra-arg=-Wunused-variable",
+					"--extra-arg=-Wpedantic",
+					"--extra-arg=-Wshadow",
+					"--extra-arg=-Wunused",
+					"--extra-arg=-Wconversion",
+					"--extra-arg=-Wsign-conversion",
+					"--extra-arg=-Wnull-dereference",
+					"--extra-arg=-Wdouble-promotion",
+					"--extra-arg=-Wformat=2",
+				},
+				init_options = {
+					clangdFileStatus = true,
+					usePlaceholders = true,
+				},
+			},
 
 			lemminx = {
 
