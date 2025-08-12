@@ -64,6 +64,9 @@ require("lazy").setup({
 
 	require("plugins/nvim-soil"),
 
+	-- Debug Adapter Protocol client implementation for Neovim
+	require("plugins/nvim-dap"),
+
 	-- [[LSP Plugins]]
 
 	-- Lua LSP configuration for Neovim
