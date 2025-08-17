@@ -67,6 +67,9 @@ require("lazy").setup({
 	-- Debug Adapter Protocol client implementation for Neovim
 	require("plugins/nvim-dap"),
 
+	-- Markdown rendering in Neovim
+	require("plugins/render-markdown"),
+
 	-- [[LSP Plugins]]
 
 	-- Lua LSP configuration for Neovim
