@@ -16,7 +16,7 @@ return {
 		},
 
 		-- If you want to use Plant UML jar version instead of the installed version
-		puml_jar = "~/software/plantuml/plantuml-mit-1.2025.3.jar",
+		puml_jar = "~/software/plantuml/plantuml-mit-1.2025.4.jar",
 
 		-- If you want to customize the image showed when running this plugin
 		image = {
