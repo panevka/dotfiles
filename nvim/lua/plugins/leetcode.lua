@@ -4,7 +4,7 @@ return {
 	dependencies = {
 		-- include a picker of your choice, see picker section for more details
 		"nvim-telescope/telescope.nvim",
-		"nvim-/plenary.nvim",
+		"nvim-lua/plenary.nvim",
 		"MunifTanjim/nui.nvim",
 	},
 	opts = {
