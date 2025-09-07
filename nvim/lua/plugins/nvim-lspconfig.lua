@@ -7,7 +7,7 @@ return {
 		{ "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		"nvim-java/nvim-java",
+		-- "nvim-java/nvim-java",
 		-- Useful status updates for LSP.
 		-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
 		{ "j-hui/fidget.nvim", opts = {} },
@@ -174,6 +174,27 @@ return {
 			--
 			-- But for many setups, the LSP (`ts_ls`) will work just fine
 			-- ts_ls = {},
+			-- jdtls = {
+			-- 	settings = {
+			-- 		java = {
+			-- 			implementationsCodeLens = { enabled = true },
+			-- 			imports = {
+			-- 				gradle = {
+			-- 					enabled = true,
+			-- 					wrapper = {
+			-- 						enabled = true,
+			-- 						checksums = {
+			-- 							{
+			-- 								sha256 = "7d3a4ac4de1c32b59bc6a4eb8ecb8e612ccd0cf1ae1e99f66902da64df296172",
+			-- 								allowed = true,
+			-- 							},
+			-- 						},
+			-- 					},
+			-- 				},
+			-- 			},
+			-- 		},
+			-- 	},
+			-- },
 
 			clangd = {
 				cmd = {
@@ -250,21 +271,14 @@ return {
 		require("mason-lspconfig").setup({
 			handlers = {
 				function(server_name)
-					local server = servers[server_name] or {}
-					-- This handles overriding only values explicitly passed
-					-- by the server configuration above. Useful when disabling
-					-- certain features of an LSP (for example, turning off formatting for ts_ls)
-					server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-					require("lspconfig")[server_name].setup(server)
-				end,
-				jdtls = function()
-					require("java").setup({
-						-- Your custom jdtls settings goes here
-					})
-
-					require("lspconfig").jdtls.setup({
-						-- Your custom nvim-java configuration goes here
-					})
+					if server_name ~= "jdtls" then
+						local server = servers[server_name] or {}
+						-- This handles overriding only values explicitly passed
+						-- by the server configuration above. Useful when disabling
+						-- certain features of an LSP (for example, turning off formatting for ts_ls)
+						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+						require("lspconfig")[server_name].setup(server)
+					end
 				end,
 			},
 		})

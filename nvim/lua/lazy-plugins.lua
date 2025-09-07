@@ -77,6 +77,9 @@ require("lazy").setup({
 	require("plugins/octo"),
 	-- [[LSP Plugins]]
 
+	-- Java LSP Config
+	require("plugins/lsp/nvim-jdtls"),
+
 	-- Lua LSP configuration for Neovim
 	require("plugins/lsp/lazydev"),
 
@@ -85,9 +88,6 @@ require("lazy").setup({
 
 	-- Main LSP Configuration
 	require("plugins/nvim-lspconfig"),
-
-	-- Java LSP Config
-	require("plugins/lsp/nvim-java"),
 
 	-- Autoformat
 	require("plugins/lsp/conform"),
