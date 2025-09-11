@@ -5,7 +5,16 @@ return {
 	dependencies = {
 		-- Automatically install LSPs and related tools to stdpath for Neovim
 		{ "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
-		"williamboman/mason-lspconfig.nvim",
+		{
+			"williamboman/mason-lspconfig.nvim",
+			opts = {
+
+				automatic_enable = {
+
+					exclude = { "jdtls" },
+				},
+			},
+		},
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		-- "nvim-java/nvim-java",
 		-- Useful status updates for LSP.
@@ -271,14 +280,12 @@ return {
 		require("mason-lspconfig").setup({
 			handlers = {
 				function(server_name)
-					if server_name ~= "jdtls" then
-						local server = servers[server_name] or {}
-						-- This handles overriding only values explicitly passed
-						-- by the server configuration above. Useful when disabling
-						-- certain features of an LSP (for example, turning off formatting for ts_ls)
-						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-						require("lspconfig")[server_name].setup(server)
-					end
+					local server = servers[server_name] or {}
+					-- This handles overriding only values explicitly passed
+					-- by the server configuration above. Useful when disabling
+					-- certain features of an LSP (for example, turning off formatting for ts_ls)
+					server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+					require("lspconfig")[server_name].setup(server)
 				end,
 			},
 		})
