@@ -1,7 +1,12 @@
 [user]
 	email = 97028404+panevka@users.noreply.github.com
 	name = panevka
+	signingkey = /home/shef/.ssh/id_ed25519
 [http]
 	version = HTTP/1.1
 [push]
 	autoSetupRemote = true
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
