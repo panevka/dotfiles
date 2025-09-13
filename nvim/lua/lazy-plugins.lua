@@ -93,7 +93,7 @@ require("lazy").setup({
 	require("plugins/lsp/conform"),
 
 	-- Autocompletion
-	require("plugins/lsp/nvim-cmp"),
+	-- require("plugins/lsp/nvim-cmp"),
 
 	-- Linting
 	require("plugins/lsp/nvim-lint"),
