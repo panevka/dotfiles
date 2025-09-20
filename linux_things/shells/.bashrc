@@ -25,6 +25,8 @@ export EDITOR=nvim
 export VISUAL=nvim
 export BROWSER=firefox
 
+export QT_SCALE_FACTOR=0.5 # fix Flameshot issues
+
 if [ -r "$HOME/.bashrc_private" ]; then
     source "$HOME/.bashrc_private"
 fi
