@@ -9,7 +9,9 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	config = function()
-		require("nvim-tree").setup({})
+		require("nvim-tree").setup({
+			view = { adaptive_size = true },
+		})
 
 		local function open_nvim_tree(data)
 			local api = require("nvim-tree.api")
