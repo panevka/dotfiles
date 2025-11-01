@@ -1,8 +1,18 @@
 local M = {}
 
 function M:setup()
-	print("JDTLS setup called")
+	-- print("JDTLS setup called")
+	-- print(vim.fn.stdpath("data"))
 	-- ft = { "java" },
+	--
+	local buf_clients = vim.lsp.get_active_clients({ bufnr = vim.api.nvim_get_current_buf() })
+	for _, client in ipairs(buf_clients) do
+		if client.name == "jdtls" then
+			print("JDTLS already running for this buffer")
+			return
+		end
+	end
+	print(vim.fn.stdpath("data"))
 	local workspace_root = vim.fn.stdpath("data") .. "/jdtls-workspace/"
 	local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 	local workspace_dir = workspace_root .. project_name
@@ -39,7 +49,8 @@ function M:setup()
 			"-Declipse.product=org.eclipse.jdt.ls.core.product",
 			"-Dlog.protocol=true",
 			"-Dlog.level=ALL",
-			"-javaagent:/home/shef/.local/share/nvim/mason/packages/jdtls/lombok.jar",
+			"-javaagent:/home/shef/.local/share/nvim/mason/packages/jdtls-backup/lombok.jar",
+			-- /home/shef/.local/share/nvim/mason/packages/jdtls-backup/lombok.jar
 			"-Xmx1g",
 			"--add-modules=ALL-SYSTEM",
 			"--add-opens",
@@ -49,7 +60,8 @@ function M:setup()
 
 			-- 💀
 			"-jar",
-			"/home/shef/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.7.0.v20250519-0528.jar",
+			-- "/home/shef/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.7.0.v20250519-0528.jar",
+			"/home/shef/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.700.v20231214-2017.jar",
 			-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
 			-- Must point to the                                                     Change this to
 			-- eclipse.jdt.ls installation                                           the actual version
