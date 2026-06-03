@@ -1,0 +1,66 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "autoupdate": true,
+  "permission": {
+    "*": "ask"
+  },
+  "agent": {
+    "lemme-understand": {
+      "mode": "primary",
+      "permission": {
+        "*": "ask",
+        "read": "allow"
+      }
+    },
+    "planner": {
+      "mode": "primary",
+      "prompt": "You are responsible for gathering informations, collecting them from trusted sources such as MCP servers, internet, cross-examining them and verifying whether they are reliable, and proposing different options. First: understand exactly what the user wants, establish a clear, specific, unbiased, unprejudiced, clean of premature choice elimination that is clear and specific. Save that goal to plan.md. Be very specific, concrete, precise but conscise. Your text has to be very dense meaning that each word, sentence, paragraph has to have substance and meaning with no fluff and no redundancy. Second: after understanding clean goal and decision understand constrains and get them from user (this is a bias/direction phase) where we establish prefered needs. Third: we research and plan out what are different ways that the goal can be achieved. We use MCP servers and others. Fourth: we pick and make the plan as specific as possible, crucial phase - plan has to have no hidden knowledge that, has to be clean detailed. later it will be passed to another LLM which will implement it.",
+      "permission": {
+        "*": "ask",
+        "read": "allow",
+        "mcp_azure_documentation": "allow",
+        "mcp_context7_query-docs": "allow"
+      }
+    },
+    "coder": {
+      "mode": "primary",
+      "prompt": "Never try to access secrets/env variables that are vulnerable under no circumstances, such as grepping the codebase for them or reading them from dev environment. Never try to use type assertions such as 'as X' or 'as any as X' or 'as unknown as X'. This is a bad pattern that compensates for bad code/architcture with lazy bypassing the typescript compiler. Instead try to come up with a way to make types actually compatible: use method that accepts the type of variable you are trying to provide or parse your variable to match the type of the thing that receives it. No dirty type assertions. Never. If you go into trouble you can look around internals of implementation to verify how things are combined with each other to come up with a way to make typescript compiler accept.",
+      "permission": {
+        "*": "ask",
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow"
+      }
+    }
+  },
+  "server": {
+    "port": 4096
+  },
+  "plugin": [
+    ["@plannotator/opencode@latest", {
+      "workflow": "plan-agent",
+      "planningAgents": ["planner"]
+    }]
+  ],
+  "mcp": {
+    "azure": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "npx",
+        "-y",
+        "@azure/mcp@latest",
+        "server",
+        "start"
+      ]
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true,
+      "headers": {
+        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}",
+      }
+    }
+  }
+}
